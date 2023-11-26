@@ -1,0 +1,35 @@
+import java.util.Scanner;
+
+public class SamorinnnnDSA {
+    static int enteringCount = 0;
+    static int returningCount = 0;
+    static int totalReturningCount = 0; 
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        int n = scanner.nextInt(); 
+        scanner.close(); 
+        System.out.println();
+
+        int result = recursiveFunction(n); // Calculate the total count.
+        System.out.println("\nResult: " + totalReturningCount); // Print the total count as the result.
+    }
+
+    public static int recursiveFunction(int n) {
+        if (n == 1) {
+            return 1; // Base case: If n is 1, return 1.
+        } else {
+            System.out.println("Entering: n - " + (n - 1)); // Print an "Entering" message.
+            enteringCount++; // Increment the entering count.
+
+            int result = recursiveFunction(n - 1); // Make a recursive call with n-1.
+
+            System.out.println("Returning: " + (n - 1)); // Print a "Returning" message.
+            returningCount++; // Increment the returning count.
+            totalReturningCount += returningCount; // Update the total returning count.
+
+            return n; // Return n (it's not used in the final result, just for demonstration).
+        }
+    }
+}
