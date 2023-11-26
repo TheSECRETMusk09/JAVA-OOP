@@ -1,0 +1,42 @@
+public class Multiplication_table {
+    public static void main(String[] args) {
+        int[][] table = new int[13][13];
+
+        // Fill the table with multiplication values
+        for (int i = 1; i <= 12; i++) {
+            for (int j = 1; j <= 12; j++) {
+                table[i][j] = i * j;
+            }
+        }
+
+        // Print the table with solid lines
+        System.out.println("\t\t\t\tMULTIPLICATION TABLE");
+        for (int i = 0; i <= 12; i++) {
+            for (int j = 0; j <= 12; j++) {
+                if (i == 0 && j == 0) {
+                    System.out.println("__________________________________________________________________________________________");
+
+                    System.out.print("      |");
+                } else if (i == 0) {
+                    System.out.print(" " + padNumber(j) + " |");
+                } else if (j == 0) {
+                    System.out.print(" " + padNumber(i) + " |");
+                } else {
+                    System.out.print(" " + padNumber(table[i][j]) + " |");
+                }
+            }
+            System.out.println();
+            if (i == 0) {
+                System.out.println("__________________________________________________________________________________________");
+            } else {
+                System.out.println("__________________________________________________________________________________________");
+            }
+        }
+    }
+
+    // Helper method to pad numbers with spaces
+    private static String padNumber(int number) {
+        String paddedNumber = String.valueOf(number);
+        return " " + paddedNumber + " ".repeat(3 - paddedNumber.length());
+    }
+}
