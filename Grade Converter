@@ -1,0 +1,61 @@
+import java.util.Scanner;
+
+public class Converter {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println(" A program to input grades in percentage (%)");
+        System.out.println(" and output its numerical equivalent and remarks");
+        System.out.println();
+        System.out.print("\033[0;1m 	Input Grade in Percentage (%)   : ");
+        double GrPer = scanner.nextDouble();
+
+        double numericalValue;
+        String Graderemark;
+
+        if (GrPer >= 50 && GrPer <= 100) {
+            if (GrPer >= 97) {
+            	numericalValue = 1.00;
+                Graderemark = "Excellent";
+            } else if (GrPer >= 94) {
+            	numericalValue = 1.25;
+                Graderemark = "Excellent";
+            } else if (GrPer >= 91) {
+            	numericalValue = 1.50;
+                Graderemark = "Very Good";
+            } else if (GrPer >= 88) {
+            	numericalValue = 1.75;
+                Graderemark = "Very Good";
+            } else if (GrPer >= 85) {
+            	numericalValue = 2.00;
+                Graderemark = "Good";
+            } else if (GrPer >= 83) {
+            	numericalValue = 2.25;
+                Graderemark = "Good";
+            } else if (GrPer >= 80) {
+            	numericalValue = 2.50;
+                Graderemark = "Fair";
+            } else if (GrPer >= 78) {
+            	numericalValue = 2.75;
+                Graderemark = "Fair";
+            } else if (GrPer >= 75) {
+            	numericalValue = 3.00;
+                Graderemark = "Passed";
+            } else if (GrPer >= 70) {
+            	numericalValue = 4.00;
+                Graderemark = "Conditional";
+            } else {
+            	numericalValue = 5.00;
+                Graderemark = "Failed";
+            }
+
+            System.out.println("\033[0;1m	Equivalent Numerical Grade     	   : " + numericalValue);
+            System.out.println("      	Remarks                       : " + Graderemark);
+        } else {
+            System.out.println("        	      Equivalent Numerical Grade         : None");
+            System.out.println("       		Remarks            +           : Invalid Input Grade");
+        }	
+
+        scanner.close();
+    }
+}
