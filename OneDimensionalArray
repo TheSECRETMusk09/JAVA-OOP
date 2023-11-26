@@ -1,0 +1,46 @@
+import java.util.Scanner;
+
+public class OneDimenArray {
+    public static void main(String[] args) {
+        Scanner input_User = new Scanner(System.in);
+
+        int[] inpNum = new int[10];
+        String[] inpStr = new String[10];
+
+        System.out.println("This program using One Dimensional Array finds duplicate values in an array of" + 
+        					"\ninputted integers and strings.\n");
+
+        for (int varval = 0; varval < 10; varval++) {
+            System.out.print("      Enter Number [" + varval + "]: ");
+            inpNum[varval] = input_User.nextInt();
+        }
+        System.out.println();
+   
+        // Finding duplicate numbers using for loop
+        for (int rptnumval = 0; rptnumval < inpNum.length; rptnumval++) {
+            for (int dupNum = rptnumval + 1; dupNum < inpNum.length; dupNum++) {
+                if (inpNum[rptnumval] == inpNum[dupNum]) {
+                    System.out.println("      Duplicate Numeric Element: " + inpNum[rptnumval]);
+                }
+            }
+        }
+        System.out.println();
+        
+        for (int charval = 0; charval < 10; charval++) {
+            System.out.print("      Enter Letters [" + charval + "]: ");
+            inpStr[charval] = input_User.next();
+        }
+        System.out.println();
+        
+        // Finding duplicate strings using for loop
+        for (int strVal = 0; strVal < inpStr.length; strVal++) {
+            for (int dupStr = strVal + 1; dupStr < inpStr.length; dupStr++) {
+                if (inpStr[strVal].equals(inpStr[dupStr])) {
+                    System.out.println("      Duplicate String Element: " + inpStr[strVal]);
+                }
+            }
+        } 
+        input_User.close();
+    }
+}
+
