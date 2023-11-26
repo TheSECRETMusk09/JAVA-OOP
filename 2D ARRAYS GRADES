@@ -1,0 +1,48 @@
+import java.util.Scanner;
+
+class gradesofstudents {
+	public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("This program will input grades of three (3) assigned activities of five");
+        System.out.println("students and calculate the average grades of the activities of each of");
+        System.out.println("the five (5) students.");
+        
+        // Constants
+        int NumOfStudents = 5;
+        int NumOfActs = 3;
+
+        // Initialize the array to store grades
+        double[][] grades = new double[NumOfStudents][NumOfActs];
+
+        // Input grades for each student and activity
+        for (int i = 0; i < NumOfStudents; i++) {
+            System.out.println();
+            for (int j = 0; j < NumOfActs; j++) {
+                System.out.printf("       Enter grade of Student #%d for Activity [%d]: ", i + 1, j + 1);
+                grades[i][j] = scanner.nextDouble();
+            }
+        }
+        System.out.println();
+        
+        // Calculate and display average grades
+        System.out.println("                         STUDENT GRADES\n");
+        System.out.printf("%-13s%-12s%-12s%-14s%s\n", " ", "Activity#1", "Activity#2", "Activity#3", "Average ");
+        System.out.println("----------------------------------------------------------");
+        for (int i = 0; i < NumOfStudents; i++) {
+            System.out.printf("%-16s", "Student#" + (i + 1));
+            double total = 0;
+            for (int j = 0; j < NumOfActs; j++) {
+                System.out.printf("%-12.2f", grades[i][j]);
+                total += grades[i][j];
+            }
+            double average = total / NumOfActs;
+            System.out.printf("%-10.2f\n", average);
+            
+        }
+
+        scanner.close();
+    }
+}
+
+
