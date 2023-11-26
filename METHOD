@@ -1,0 +1,48 @@
+import java.util.Scanner;
+public class JavaMethod {
+    public static void main(String[] args) {
+        
+    	Scanner InputByUser = new Scanner(System.in);
+        
+        char peek;
+        	System.out.println("This program will input a string and display the middle");
+            System.out.println("character of the string.\n");
+       
+        while (true) {
+            
+            processString();
+            System.out.println();
+            System.out.print("\nInput another string [Y/N]? ");
+            peek = InputByUser.next().charAt(0);
+            System.out.print("\n");
+
+            if (Character.toUpperCase(peek) != 'Y') {
+                break; 
+            }
+        }
+
+        System.out.println("\nProgram terminated . . .");
+    }
+    private static void processString() {
+        Scanner InputByUser = new Scanner(System.in);
+
+        System.out.format("      Input a string: ");
+        String inp_StrWords = InputByUser.nextLine();
+
+        String middleCharacters = findMiddleCharacters(inp_StrWords);
+
+        System.out.format("\n      The middle character(s) in the string: " + middleCharacters);
+    }
+    private static String findMiddleCharacters(String str_words) {
+        int length = str_words.length();
+        int middle = length / 2;
+
+        if (length % 2 == 0) {
+            return str_words.substring(middle - 1, middle + 1);
+            
+        } else {
+            return str_words.substring(middle, middle + 1);
+            
+        }
+    }
+}
