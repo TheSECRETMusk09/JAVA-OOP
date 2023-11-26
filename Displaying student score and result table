@@ -1,0 +1,39 @@
+public class StudentDisplays{
+	 public static void main(String[] args) {
+	        // Student scores
+	        //Student 1: Christian
+	    	double christianDsa = 85.5;
+	        double christianOop = 80.2;
+	        double christianDatabase = 90.43;
+	        //Student 2: Caleb
+	        double calebDsa = 95.0;
+	        double calebOop = 75.3;
+	        double calebDatabase = 84.25;
+	        //Student 3: CJ
+	        double cjDsa = 81.1;
+	        double cjOop = 84.6;
+	        double cjDatabase = 87.81;
+
+	        // Computing average score for each student
+	        double christianAverage = (christianDsa + christianOop + christianDatabase) / 3;
+	        double calebAverage = (calebDsa + calebOop + calebDatabase) / 3;
+	        double cjAverage = (cjDsa + cjOop + cjDatabase) / 3;
+
+	        // Determining pass or fail for each student
+	        String christianResult = (christianAverage > 85.5) ? "PASSED" : "FAILED";
+	        String calebResult = (calebAverage > 85.5) ? "PASSED" : "FAILED";
+	        String cjResult = (cjAverage > 85.5) ? "PASSED" : "FAILED";
+
+	        // Displaying student scores, average, and pass/fail status in tabular form
+	        System.out.println("--------------------------------------------------------------------------");
+	        System.out.println("Student Scores");
+	        System.out.println();
+	        System.out.println("Name       DSA   OOP   DATABASE        AVERAGE      RESULT");
+	        System.out.println("Christian  " + christianDsa + "  " + christianOop + "   " + christianDatabase + "    " +  christianAverage + "  " + christianResult);
+	        System.out.println("Caleb      " + calebDsa + "  " + calebOop + "   " + calebDatabase + "    " + calebAverage + "  " + calebResult);
+	        System.out.println("CJ         " + cjDsa + "  " + cjOop + "   " + cjDatabase + "    " + cjAverage + "  " + cjResult);
+	        System.out.println("--------------------------------------------------------------------------");
+
+	    
+	    }
+	}
