@@ -1,0 +1,51 @@
+-------------------------------------------------------------------------------scanner-------------------------------------------------------------------------------
+
+import java.util.Scanner;
+
+public class SCANNER {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        
+        System.out.print("\n\nEnter time in seconds: ");
+            int inputSeconds = scanner.nextInt();
+
+            int remainingSeconds =inputSeconds % 3600;
+            int seconds = inputSeconds % 60;
+            int minutes = (inputSeconds % 3600) / 60;
+            int hours = inputSeconds / 3600;
+
+        System.out.println("\n\n\n\n");
+   
+        System.out.println("Enter time in seconds: " + ("\033[4m" + " " + inputSeconds + " " + "\033[0m"));
+        System.out.println("The inputted time equivalent to : " + "\033[4;2m" + " " + hours + " " + "\033[0m" + " hours, " +  "\033[4;2m" + " "+ minutes +" " + "\033[0m" + " minutes, " + "\033[4;2m"+" " + seconds+" " +"\033[0m " + " seconds");
+    } 
+}
+
+
+-------------------------------------------------------------------------------BufferReader-------------------------------------------------------------------------------
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class BufferReader {
+	public static void main(String[] args) {
+        try {
+            BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+            System.out.print("Enter time in seconds: ");
+            int inputSeconds = Integer.parseInt(reader.readLine());
+
+            int hours = inputSeconds / 3600;
+            int remainingSeconds = inputSeconds % 3600;
+            int minutes = remainingSeconds / 60;
+            int seconds = remainingSeconds % 60;
+
+            System.out.println("Equivalent time: " + hours + " hours, " + minutes + " minutes, " + seconds + " seconds");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+
