@@ -1,0 +1,442 @@
+import java.util.Scanner;
+
+public class NumberToWords {
+    public static void main(String[] args) {
+        try (Scanner Sc = new Scanner(System.in)) {
+            System.out.println("This program using Decision Control Structures displays how many digits are inputted by the");
+            System.out.println("user and the equivalent inputted number in words.");
+
+            char input_User;
+            do {
+                System.out.print("\n      Enter an Integer Number: ");
+                String inputNumVal = Sc.nextLine();
+
+                boolean isInputedValid = true;
+                for (char cVal : inputNumVal.toCharArray()) {
+                    if (!Character.isDigit(cVal)) {
+                    	isInputedValid = false;
+                        break;
+                    }
+                }
+
+                if (isInputedValid && inputNumVal.length() <= 5) {
+                    int numberValinputed = Integer.parseInt(inputNumVal);
+
+                    System.out.println("\n      You entered a " + inputNumVal.length() + "-digit number.");
+                    System.out.println("      The number is " + inputNumVal);
+
+                    StringBuilder ToWordVal = new StringBuilder();
+
+                    if (numberValinputed == 0) {
+                    	ToWordVal.append("Zero");
+                    } else {
+                        // Switch based on the length of the input
+                        switch (inputNumVal.length()) {
+                            case 5:
+                                int tenThousands = numberValinputed / 10000;
+                                if (tenThousands > 0) {
+                                    switch (tenThousands) {
+                                        case 1:
+                                            if (numberValinputed == 10000) {
+                                            	ToWordVal.append("Ten Thousand ");
+                                            } else if (numberValinputed >= 11000 && numberValinputed <= 11999) {
+                                            	ToWordVal.append("Eleven Thousand ");
+                                            } else if (numberValinputed >= 12000 && numberValinputed <= 12999) {
+                                            	ToWordVal.append("Twelve Thousand ");
+                                            } else if (numberValinputed >= 13000 && numberValinputed <= 13999) {
+                                            	ToWordVal.append("Thirteen Thousand ");
+                                            } else if (numberValinputed >= 14000 && numberValinputed <= 14999) {
+                                            	ToWordVal.append("Fourteen Thousand ");
+                                            } else if (numberValinputed >= 15000 && numberValinputed <= 15999) {
+                                            	ToWordVal.append("Fifteen Thousand ");
+                                            } else if (numberValinputed >= 16000 && numberValinputed <= 16999) {
+                                            	ToWordVal.append("Sixteen Thousand ");
+                                            } else if (numberValinputed >= 17000 && numberValinputed <= 17999) {
+                                            	ToWordVal.append("Seventeen Thousand ");
+                                            } else if (numberValinputed >= 18000 && numberValinputed <= 18999) {
+                                            	ToWordVal.append("Eighteen Thousand ");
+                                            } else if (numberValinputed >= 19000 && numberValinputed <= 19999) {
+                                            	ToWordVal.append("Nineteen Thousand ");
+                                            }
+                                            break;
+                                        case 2:
+                                            if (numberValinputed == 20000) {
+                                            	ToWordVal.append("Twenty Thousand ");
+                                            } else if (numberValinputed >= 21000 && numberValinputed <= 21999) {
+                                            	ToWordVal.append("Twenty-One Thousand ");
+                                            } else if (numberValinputed >= 22000 && numberValinputed <= 22999) {
+                                            	ToWordVal.append("Twenty-Two Thousand ");
+                                            } else if (numberValinputed >= 23000 && numberValinputed <= 23999) {
+                                            	ToWordVal.append("Twenty-Three Thousand ");
+                                            } else if (numberValinputed >= 24000 && numberValinputed <= 24999) {
+                                            	ToWordVal.append("Twenty-Four Thousand ");
+                                            } else if (numberValinputed >= 25000 && numberValinputed <= 25999) {
+                                            	ToWordVal.append("Twenty-Five Thousand ");
+                                            } else if (numberValinputed >= 26000 && numberValinputed <= 26999) {
+                                            	ToWordVal.append("Twenty-Six Thousand ");
+                                            } else if (numberValinputed >= 27000 && numberValinputed <= 27999) {
+                                            	ToWordVal.append("Twenty-Seven Thousand ");
+                                            } else if (numberValinputed >= 28000 && numberValinputed <= 28999) {
+                                            	ToWordVal.append("Twenty-Eight Thousand ");
+                                            } else if (numberValinputed >= 29000 && numberValinputed <= 29999) {
+                                            	ToWordVal.append("Twenty-Nine Thousand ");
+                                            }
+                                            break;
+                                        case 3:
+                                            if (numberValinputed == 30000) {
+                                            	ToWordVal.append("Thirty Thousand ");
+                                            } else if (numberValinputed >= 31000 && numberValinputed <= 31999) {
+                                            	ToWordVal.append("Thirty-One Thousand ");
+                                            } else if (numberValinputed >= 32000 && numberValinputed <= 32999) {
+                                            	ToWordVal.append("Thirty-Two Thousand ");
+                                            } else if (numberValinputed >= 33000 && numberValinputed <= 33999) {
+                                            	ToWordVal.append("Thirty-Three Thousand ");
+                                            } else if (numberValinputed >= 34000 && numberValinputed <= 34999) {
+                                            	ToWordVal.append("Thirty-Four Thousand ");
+                                            } else if (numberValinputed >= 35000 && numberValinputed <= 35999) {
+                                            	ToWordVal.append("Thirty-Five Thousand ");
+                                            } else if (numberValinputed >= 36000 && numberValinputed <= 36999) {
+                                            	ToWordVal.append("Thirty-Six Thousand ");
+                                            } else if (numberValinputed >= 37000 && numberValinputed <= 37999) {
+                                            	ToWordVal.append("Thirty-Seven Thousand ");
+                                            } else if (numberValinputed >= 38000 && numberValinputed <= 38999) {
+                                            	ToWordVal.append("Thirty-Eight Thousand ");
+                                            } else if (numberValinputed >= 39000 && numberValinputed <= 39999) {
+                                            	ToWordVal.append("Thirty-Nine Thousand ");
+                                            }
+                                            break;
+                                        case 4:
+                                            if (numberValinputed == 40000) {
+                                            	ToWordVal.append("Forty Thousand ");
+                                            } else if (numberValinputed >= 41000 && numberValinputed <= 41999) {
+                                            	ToWordVal.append("Forty-One Thousand ");
+                                            } else if (numberValinputed >= 42000 && numberValinputed <= 42999) {
+                                            	ToWordVal.append("Forty-Two Thousand ");
+                                            } else if (numberValinputed >= 43000 && numberValinputed <= 43999) {
+                                            	ToWordVal.append("Forty-Three Thousand ");
+                                            } else if (numberValinputed >= 44000 && numberValinputed <= 44999) {
+                                            	ToWordVal.append("Forty-Four Thousand ");
+                                            } else if (numberValinputed >= 45000 && numberValinputed <= 45999) {
+                                            	ToWordVal.append("Forty-Five Thousand ");
+                                            } else if (numberValinputed >= 46000 && numberValinputed <= 46999) {
+                                            	ToWordVal.append("Forty-Six Thousand ");
+                                            } else if (numberValinputed >= 47000 && numberValinputed <= 47999) {
+                                            	ToWordVal.append("Forty-Seven Thousand ");
+                                            } else if (numberValinputed >= 48000 && numberValinputed <= 48999) {
+                                            	ToWordVal.append("Forty-Eight Thousand ");
+                                            } else if (numberValinputed >= 49000 && numberValinputed <= 49999) {
+                                            	ToWordVal.append("Forty-Nine Thousand ");
+                                            }
+                                            break;
+                                        case 5:
+                                            if (numberValinputed == 50000) {
+                                            	ToWordVal.append("Fifty Thousand ");
+                                            } else if (numberValinputed >= 51000 && numberValinputed <= 51999) {
+                                            	ToWordVal.append("Fifty-One Thousand ");
+                                            } else if (numberValinputed >= 52000 && numberValinputed <= 52999) {
+                                            	ToWordVal.append("Fifty-Two Thousand ");
+                                            } else if (numberValinputed >= 53000 && numberValinputed <= 53999) {
+                                            	ToWordVal.append("Fifty-Three Thousand ");
+                                            } else if (numberValinputed >= 54000 && numberValinputed <= 54999) {
+                                            	ToWordVal.append("Fifty-Four Thousand ");
+                                            } else if (numberValinputed >= 55000 && numberValinputed <= 55999) {
+                                            	ToWordVal.append("Fifty-Five Thousand ");
+                                            } else if (numberValinputed >= 56000 && numberValinputed <= 56999) {
+                                            	ToWordVal.append("Fifty-Six Thousand ");
+                                            } else if (numberValinputed >= 57000 && numberValinputed <= 57999) {
+                                            	ToWordVal.append("Fifty-Seven Thousand ");
+                                            } else if (numberValinputed >= 58000 && numberValinputed <= 58999) {
+                                            	ToWordVal.append("Fifty-Eight Thousand ");
+                                            } else if (numberValinputed >= 59000 && numberValinputed <= 59999) {
+                                            	ToWordVal.append("Fifty-Nine Thousand ");
+                                            }
+                                            break;
+                                        case 6:
+                                            if (numberValinputed == 60000) {
+                                            	ToWordVal.append("Sixty Thousand ");
+                                            } else if (numberValinputed >= 61000 && numberValinputed <= 61999) {
+                                            	ToWordVal.append("Sixty-One Thousand ");
+                                            } else if (numberValinputed >= 62000 && numberValinputed <= 62999) {
+                                            	ToWordVal.append("Sixty-Two Thousand ");
+                                            } else if (numberValinputed >= 63000 && numberValinputed <= 63999) {
+                                            	ToWordVal.append("Sixty-Three Thousand ");
+                                            } else if (numberValinputed >= 64000 && numberValinputed <= 64999) {
+                                            	ToWordVal.append("Sixty-Four Thousand ");
+                                            } else if (numberValinputed >= 65000 && numberValinputed <= 65999) {
+                                            	ToWordVal.append("Sixty-Five Thousand ");
+                                            } else if (numberValinputed >= 66000 && numberValinputed <= 66999) {
+                                            	ToWordVal.append("Sixty-Six Thousand ");
+                                            } else if (numberValinputed >= 67000 && numberValinputed <= 67999) {
+                                            	ToWordVal.append("Sixty-Seven Thousand ");
+                                            } else if (numberValinputed >= 68000 && numberValinputed <= 68999) {
+                                            	ToWordVal.append("Sixty-Eight Thousand ");
+                                            } else if (numberValinputed >= 69000 && numberValinputed <= 69999) {
+                                            	ToWordVal.append("Sixty-Nine Thousand ");
+                                            }
+                                            break;
+                                        case 7:
+                                            if (numberValinputed == 70000) {
+                                            	ToWordVal.append("Seventy Thousand ");
+                                            } else if (numberValinputed >= 71000 && numberValinputed <= 71999) {
+                                            	ToWordVal.append("Seventy-One Thousand ");
+                                            } else if (numberValinputed >= 72000 && numberValinputed <= 72999) {
+                                            	ToWordVal.append("Seventy-Two Thousand ");
+                                            } else if (numberValinputed >= 73000 && numberValinputed <= 73999) {
+                                            	ToWordVal.append("Seventy-Three Thousand ");
+                                            } else if (numberValinputed >= 74000 && numberValinputed <= 74999) {
+                                            	ToWordVal.append("Seventy-Four Thousand ");
+                                            } else if (numberValinputed >= 75000 && numberValinputed <= 75999) {
+                                            	ToWordVal.append("Seventy-Five Thousand ");
+                                            } else if (numberValinputed >= 76000 && numberValinputed <= 76999) {
+                                            	ToWordVal.append("Seventy-Six Thousand ");
+                                            } else if (numberValinputed >= 77000 && numberValinputed <= 77999) {
+                                            	ToWordVal.append("Seventy-Seven Thousand ");
+                                            } else if (numberValinputed >= 78000 && numberValinputed <= 78999) {
+                                            	ToWordVal.append("Seventy-Eight Thousand ");
+                                            } else if (numberValinputed >= 79000 && numberValinputed <= 79999) {
+                                            	ToWordVal.append("Seventy-Nine Thousand ");
+                                            }
+                                            break;
+                                        case 8:
+                                            if (numberValinputed == 80000) {
+                                            	ToWordVal.append("Eighty Thousand ");
+                                            } else if (numberValinputed >= 81000 && numberValinputed <= 81999) {
+                                            	ToWordVal.append("Eighty-One Thousand ");
+                                            } else if (numberValinputed >= 82000 && numberValinputed <= 82999) {
+                                            	ToWordVal.append("Eighty-Two Thousand ");
+                                            } else if (numberValinputed >= 83000 && numberValinputed <= 83999) {
+                                            	ToWordVal.append("Eighty-Three Thousand ");
+                                            } else if (numberValinputed >= 84000 && numberValinputed <= 84999) {
+                                            	ToWordVal.append("Eighty-Four Thousand ");
+                                            } else if (numberValinputed >= 85000 && numberValinputed <= 85999) {
+                                            	ToWordVal.append("Eighty-Five Thousand ");
+                                            } else if (numberValinputed >= 86000 && numberValinputed <= 86999) {
+                                            	ToWordVal.append("Eighty-Six Thousand ");
+                                            } else if (numberValinputed >= 87000 && numberValinputed <= 87999) {
+                                            	ToWordVal.append("Eighty-Seven Thousand ");
+                                            } else if (numberValinputed >= 88000 && numberValinputed <= 88999) {
+                                            	ToWordVal.append("Eighty-Eight Thousand ");
+                                            } else if (numberValinputed >= 89000 && numberValinputed <= 89999) {
+                                            	ToWordVal.append("Eighty-Nine Thousand ");
+                                            }
+                                            break;
+                                        case 9:
+                                        	if(numberValinputed== 90000) {
+                                            	ToWordVal.append("Ninety Thousand ");
+                                            } else if (numberValinputed >= 91000 && numberValinputed <= 91999) {
+                                            	ToWordVal.append("Ninety-One Thousand ");
+                                            } else if (numberValinputed >= 92000 && numberValinputed <= 92999) {
+                                            	ToWordVal.append("Ninety-Two Thousand ");
+                                            } else if (numberValinputed >= 93000 && numberValinputed <= 93999) {
+                                            	ToWordVal.append("Ninety-Three Thousand ");
+                                            } else if (numberValinputed >= 94000 && numberValinputed <= 94999) {
+                                            	ToWordVal.append("Ninety-Four Thousand ");
+                                            } else if (numberValinputed >= 95000 && numberValinputed <= 95999) {
+                                            	ToWordVal.append("Ninety-Five Thousand ");
+                                            } else if (numberValinputed >= 96000 && numberValinputed <= 96999) {
+                                            	ToWordVal.append("Ninety-Six Thousand ");
+                                            } else if (numberValinputed >= 97000 && numberValinputed <= 97999) {
+                                            	ToWordVal.append("Ninety-Seven Thousand ");
+                                            } else if (numberValinputed >= 98000 && numberValinputed <= 98999) {
+                                            	ToWordVal.append("Ninety-Eight Thousand ");
+                                            } else if (numberValinputed >= 99000 && numberValinputed <= 99999) {
+                                            	ToWordVal.append("Ninety-Nine Thousand ");
+                                            }
+                                            break;
+                                    }
+                                    numberValinputed %= 100000;
+                                }
+                            case 4:
+                                // Thousands
+                                int thousands = numberValinputed / 1000;
+                                if (thousands > 0) {
+                                    switch (thousands) {
+                                        case 1:
+                                        	ToWordVal.append("One Thousand");
+                                            break;
+                                        case 2:
+                                        	ToWordVal.append("Two Thousand ");
+                                            break;
+                                        case 3:
+                                        	ToWordVal.append("Three Thousand ");
+                                            break;
+                                        case 4:
+                                        	ToWordVal.append("Four Thousand ");
+                                            break;
+                                        case 5:
+                                        	ToWordVal.append("Five Thousand ");
+                                            break;
+                                        case 6:
+                                        	ToWordVal.append("Six Thousand ");
+                                            break;
+                                        case 7:
+                                        	ToWordVal.append("Seven Thousand ");
+                                            break;
+                                        case 8:
+                                        	ToWordVal.append("Eight Thousand ");
+                                            break;
+                                        case 9:
+                                        	ToWordVal.append("Nine Thousand ");
+                                            break;
+
+                                    }
+                                    numberValinputed %= 1000;
+                                }
+                            case 3:
+                                // Hundreds
+                                int hundreds = numberValinputed / 100;
+                                if (hundreds > 0) {
+                                    switch (hundreds) {
+                                        case 1:
+                                        	ToWordVal.append("One Hundred ");
+                                            break;
+                                        case 2:
+                                        	ToWordVal.append("Two Hundred ");
+                                            break;
+                                        case 3:
+                                        	ToWordVal.append("Three Hundred ");
+                                            break;
+                                        case 4:
+                                        	ToWordVal.append("Four Hundred ");
+                                            break;
+                                        case 5:
+                                        	ToWordVal.append("Five Hundred ");
+                                            break;
+                                        case 6:
+                                        	ToWordVal.append("Six Hundred ");
+                                            break;
+                                        case 7:
+                                        	ToWordVal.append("Seven Hundred ");
+                                            break;
+                                        case 8:
+                                        	ToWordVal.append("Eight Hundred ");
+                                            break;
+                                        case 9:
+                                        	ToWordVal.append("Nine Hundred ");
+                                            break;
+
+                                    }
+                                    numberValinputed %= 100;
+                                }
+                            case 2:
+                                // Tens and Units
+                                if (numberValinputed >= 11 && numberValinputed <= 19) {
+                                    switch (numberValinputed) {
+                                        case 11:
+                                        	ToWordVal.append("Eleven");
+                                            break;
+                                        case 12:
+                                        	ToWordVal.append("Twelve");
+                                            break;
+                                        case 13:
+                                        	ToWordVal.append("Thirteen");
+                                            break;
+                                        case 14:
+                                        	ToWordVal.append("Fourteen");
+                                            break;
+                                        case 15:
+                                        	ToWordVal.append("Fifteen");
+                                            break;
+                                        case 16:
+                                        	ToWordVal.append("Sixteen");
+                                            break;
+                                        case 17:
+                                        	ToWordVal.append("Seventeen");
+                                            break;
+                                        case 18:
+                                        	ToWordVal.append("Eighteen");
+                                            break;
+                                        case 19:
+                                        	ToWordVal.append("Nineteen");
+                                            break;
+                                    }
+                                } else {
+                                    int tens = numberValinputed / 10;
+                                    if (tens > 0) {
+                                        switch (tens) { 
+                                            case 1:
+                                            	ToWordVal.append("Ten");
+                                                break;
+                                            case 2:
+                                            	ToWordVal.append("Twenty");
+                                                break;
+                                            case 3:
+                                            	ToWordVal.append("Thirty");
+                                                break;
+                                            case 4:
+                                            	ToWordVal.append("Forty");
+                                                break;
+                                            case 5:       
+                                              ToWordVal.append("Fifty");
+                                                break;
+                                            case 6:
+                                            	ToWordVal.append("Sixty");
+                                                break;
+                                            case 7:
+                                            	ToWordVal.append("Seventy");
+                                                break;
+                                            case 8:
+                                            	ToWordVal.append("Eighty");
+                                                break;
+                                            case 9:
+                                            	ToWordVal.append("Ninety");
+                                                break;
+                                        }
+                                        if (numberValinputed % 10 != 0) {
+                                        	ToWordVal.append(" ");
+                                        }
+                                        numberValinputed %= 10;
+                                    }
+                                    if (numberValinputed > 0) {
+                                        switch (numberValinputed) {
+                                            case 1:
+                                            	ToWordVal.append("One");
+                                                break;
+                                            case 2:
+                                            	ToWordVal.append("Two");
+                                                break;
+                                            case 3:
+                                            	ToWordVal.append("Three");
+                                                break;
+                                            case 4:
+                                            	ToWordVal.append("Four");
+                                                break;
+                                            case 5:
+                                            	ToWordVal.append("Five");
+                                                break;
+                                            case 6:
+                                            	ToWordVal.append("Six");
+                                                break;
+                                            case 7:
+                                            	ToWordVal.append("Seven");
+                                                break;
+                                            case 8:
+                                            	ToWordVal.append("Eight");
+                                                break;
+                                            case 9:
+                                            	ToWordVal.append("Nine");
+                                                break;
+                                        }
+                                    }
+                                }
+                                break;
+                            default:
+                                // Handle other cases if needed
+                                break;
+                        }
+                    }
+
+                    System.out.println("      The number in words: " + ToWordVal.toString());
+                } else {
+                    System.out.println("\n\n");
+                    System.out.println("      Enter an Integer Number:" + inputNumVal);
+                    System.out.println("\n      You entered an INVALID INPUT.");
+                }
+
+                System.out.print("\nInput Another? [Y/N]: ");
+                input_User = Sc.nextLine().toUpperCase().charAt(0);
+            } while (input_User == 'Y');
+            System.out.println("\nProgram terminated.");
+            Sc.close();
+
+            System.out.print("\n\n"); } } }
