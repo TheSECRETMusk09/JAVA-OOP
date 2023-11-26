@@ -1,0 +1,118 @@
+import java.util.Stack;
+import java.util.Scanner;
+
+class Employee {
+    String fullName;
+    String employeeNumber;
+
+    Employee(String fullName, String employeeNumber) {
+        this.fullName = fullName;
+        this.employeeNumber = employeeNumber;
+    }
+
+    void displayEmployee() {
+        System.out.println("Full Name: " + fullName);
+        System.out.println("Employee Number: " + employeeNumber);
+    }
+
+    boolean matchesEmployeeNumber(String searchEmployeeNumber) {
+        return this.employeeNumber.equals(searchEmployeeNumber);
+    }
+}
+
+public class HELLONAME {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        Stack<Employee> employeeStack = new Stack<>();
+        boolean flag = true;
+        final int MAX_EMPLOYEES = 5; // Maximum number of employees
+
+        while (flag && employeeStack.size() < MAX_EMPLOYEES) {
+            System.out.println("\n--------------------- Employee Management System ---------------------");
+            System.out.println("1. Insert");
+            System.out.println("2. Delete");
+            System.out.println("3. Display");
+            System.out.println("4. Search");
+            System.out.println("5. Exit");
+            System.out.println();
+            System.out.print("Enter your choice: ");
+            int choice = scanner.nextInt();
+
+            switch (choice) {
+                case 1:
+                    if (employeeStack.size() < MAX_EMPLOYEES) {
+                        System.out.print("Enter Full Name: ");
+                        String fullName = scanner.next();
+                        System.out.print("Enter Employee Number: ");
+                        String employeeNumber = scanner.next();
+                        Employee newEmployee = new Employee(fullName, employeeNumber);
+                        employeeStack.push(newEmployee);
+                    } else {
+                        System.out.println("\nEmployee limit reached. Cannot insert more employees.");
+                    }
+                    break;
+                case 2:
+                    if (!employeeStack.isEmpty()) {
+                        Employee deletedEmployee = employeeStack.pop();
+                        System.out.println("\nDeleted Employee:");
+                        deletedEmployee.displayEmployee();
+                    } else {
+                        System.out.println("\nNo employee to delete.");
+                    }
+                    break;
+                case 3:
+                    if (!employeeStack.isEmpty()) {
+                        System.out.println("\nEmployee List:");
+                        for (Employee employee : employeeStack) {
+                            employee.displayEmployee();
+                            System.out.println();
+                        }
+                    } else {
+                        System.out.println("\nNo employee in the list.");
+                    }
+                    break;
+                case 4:
+                    if (!employeeStack.isEmpty()) {
+                        System.out.print("\nEnter Employee Number to search: ");
+                        String searchEmployeeNumber = scanner.next();
+                        Employee foundEmployee = searchEmployeeByNumber(employeeStack, searchEmployeeNumber);
+                        if (foundEmployee != null) {
+                            System.out.println("\nFound Employee:");
+                            foundEmployee.displayEmployee();
+                        } else {
+                            System.out.println("\nEmployee not found.");
+                        }
+                    } else {
+                        System.out.println("\nNo employee in the list.");
+                    }
+                    break;
+                case 5:
+                    System.out.println("\nExiting...");
+                    flag = false;
+                    break;
+                default:
+                    System.out.println("\nInvalid choice. Please choose a valid option.");
+            }
+
+            if (flag && employeeStack.size() < MAX_EMPLOYEES) {
+                System.out.print("\nDo you want to continue? (yes/no): ");
+                String answer = scanner.next();
+                if (answer.equalsIgnoreCase("no")) {
+                    flag = false;
+                }
+            }
+        }
+        scanner.close();
+    }
+
+    private static Employee searchEmployeeByNumber(Stack<Employee> employeeStack, String searchEmployeeNumber) {
+        for (Employee employee : employeeStack) {
+            if (employee.matchesEmployeeNumber(searchEmployeeNumber)) {
+                return employee;
+            }
+        }
+        return null;
+    }
+}
+
+
